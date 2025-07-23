@@ -1,11 +1,14 @@
 import Hero from "@/components/Hero";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <div>
       {/* Jumbotron */}
-      <Hero />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hero />
+      </Suspense>
 
       {/* Why hire */}
       <section className="py-16 px-10 text-center">
